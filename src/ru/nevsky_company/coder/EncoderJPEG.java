@@ -4,8 +4,8 @@ import java.io.IOException;
 
 public class EncoderJPEG {
 
-    public EncoderJPEG() throws IOException {
-        pixelArray = new PixelArray("earth");
+    public EncoderJPEG(String nameImage) throws IOException {
+        pixelArray = new PixelArray(nameImage);
         codecDCT = new DCT();
         quant = new Quant();
         zigZag = new ZigZag();
@@ -45,7 +45,8 @@ public class EncoderJPEG {
                     x = 0;
                     y = 0;
                     arrayPix = runWavelet(arrayPix);
-                    arrayPix = runQuant(arrayPix);
+                    //arrayPix = runQuant(arrayPix);
+                    //runHideZigZag();
                     for (int k = i; k < row; k++) {
                         for (int s = j; s < col; s++) {
                             yCbCr[k][s][element] = arrayPix[x][y];
@@ -60,7 +61,7 @@ public class EncoderJPEG {
                     x = 0;
                     y = 0;
                     //runQuant(arrayPix);
-                    runHideZigZag();
+                    //runHideZigZag();
                     col += STEP;
                 }
             }
@@ -86,7 +87,8 @@ public class EncoderJPEG {
     }
 
     private double[][] runQuant(double f[][]) {
-        return quant.quant(f);
+        resultArray = quant.quant(f);
+        return resultArray;
     }
 
     private void runHideZigZag() {

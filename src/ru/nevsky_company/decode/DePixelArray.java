@@ -55,7 +55,7 @@ class DePixelArray {
         img.setRGB(0, 0, width, height, pImage, 0, width);
         System.out.println("\nSAVE IMAGE");
         System.out.println("END ALGORITHM");
-        ImageIO.write(img, "jpg", new FileOutputStream("RESULT.jpg"));  // save image
+        ImageIO.write(img, "bmp", new FileOutputStream("RESULT.bmp"));  // save image
     }
 
     private int getPixelValue(int r, int g, int b) {

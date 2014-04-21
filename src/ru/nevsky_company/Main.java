@@ -10,28 +10,29 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         System.out.println("CODE JPEG:");
-        EncoderJPEG encoderJPEG = new EncoderJPEG();
+        EncoderJPEG encoderJPEG = new EncoderJPEG("imageEarth.bmp");
         encoderJPEG.runAlgorithm();
-        //double[][][] yCbCr = encoderJPEG.getYCbCr();
-        //final int SIZE = encoderJPEG.getSizePicture();
-        double array[] = encoderJPEG.getArrayForHuffman();
-        int SIZE = array.length;
-
-        /*
-        for (int i = 0; i < result.length; i++) {
-            System.out.printf("%2d ", result[i]);
-        } */
-        System.out.println();
-        System.out.println("\n--------------------------------------------------------------------------------\n" +
-                "--------------------------------------------------------------------------------" +
-                "\n--------------------------------------------------------------------------------\n" +
-                "--------------------------------------------------------------------------------");
+        double array[][][] = encoderJPEG.getYCbCr();
+        int SIZE = encoderJPEG.getSizePicture();
 
         System.out.println("DECODE JPEG:");
-        //System.out.println("Length of ycbcr = " + yCbCr.length);
-        //DecoderJPEG decoderJPEG = new DecoderJPEG(result, result.length);
-        //DecoderJPEG decoderJPEG = new DecoderJPEG(yCbCr, SIZE);
         DecoderJPEG decoderJPEG = new DecoderJPEG(array, SIZE);
         decoderJPEG.runAlgrithm();
+        /*
+        File file = new File("imageEarth.bmp");
+        BufferedImage img = ImageIO.read(file);
+        final int WIDTH = img.getWidth();
+        final int HEIGHT = img.getHeight();
+        System.out.println("WIDTH = " + WIDTH);
+        System.out.println("HEIGHT = " + HEIGHT);
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                int pixel = img.getRGB(i, j);
+                System.out.printf("%6d ", pixel);
+            }
+            System.out.println();
+        }
+        */
     }
 }

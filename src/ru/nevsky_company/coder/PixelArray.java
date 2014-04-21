@@ -2,6 +2,7 @@ package ru.nevsky_company.coder;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 class PixelArray {
@@ -26,9 +27,10 @@ class PixelArray {
      *
      * @param nameImage . The method load image by nameImage
      * @throws IOException
+     * PixelArray.class.getResource(nameImage + ".bmp")
      */
     private void loadImage(String nameImage) throws IOException {
-        img = ImageIO.read(PixelArray.class.getResource(nameImage + ".jpg"));
+        img = ImageIO.read(new File(nameImage));
         width = img.getWidth();
         height = img.getHeight();
 

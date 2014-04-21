@@ -29,7 +29,7 @@ public class DecoderJPEG {
     }
 
     public void runAlgrithm() throws IOException {
-        fillYCbCr();
+        //fillYCbCr();
         int row = 0;
         int col = 0;
         int x = 0;
@@ -112,8 +112,8 @@ public class DecoderJPEG {
                     block[index++] = arrayForHuffman[k];
                 }
                 position += BLOCK;
-                arrayAfterZigZag = deZigZag.getArray(block);
-                arrayAfterQuant = deQuant.quant(arrayAfterZigZag);
+                //arrayAfterZigZag = deZigZag.getArray(block);
+                //arrayAfterQuant = deQuant.quant(arrayAfterZigZag);
 
                 for (int k = i; k < row; k++) {
                     for (int s = j; s < col; s++) {
