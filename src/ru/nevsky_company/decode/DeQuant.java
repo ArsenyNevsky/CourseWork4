@@ -11,8 +11,8 @@ class DeQuant {
         return array;
     }
 
-    private int ceil(double value) {
-        return (int)Math.ceil(value);
+    private double ceil(double value) {
+        return value;
     }
 
     private final int[][] tableQuant = {

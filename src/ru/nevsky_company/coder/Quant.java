@@ -3,22 +3,17 @@ package ru.nevsky_company.coder;
 class Quant {
 
     public double[][] quant(double array[][]) {
-        System.out.println("\nafter quant");
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 array[i][j] = ceil(array[i][j] / tableQuant[i][j]);
-                //System.out.printf("%4d ", array[i][j]);
             }
-            System.out.println();
         }
-        System.out.println("--------------------------------\n");
         return array;
     }
 
-    private int ceil(double value) {
-        return (int)Math.ceil(value);
+    private double ceil(double value) {
+        return value;
     }
-
 
     private final int[][] tableQuant = {
             {16, 11, 10, 16, 24, 40, 51, 61},

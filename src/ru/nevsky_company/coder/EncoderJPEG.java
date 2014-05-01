@@ -5,6 +5,7 @@ import java.io.IOException;
 public class EncoderJPEG {
 
     public EncoderJPEG(String nameImage) throws IOException {
+        System.out.println("ENCODE JPEG");
         pixelArray = new PixelArray(nameImage);
         codecDCT = new DCT();
         quant = new Quant();
@@ -21,7 +22,7 @@ public class EncoderJPEG {
         yCbCr = pixelArray.getyCbCrArray();
         HEIGHT = pixelArray.getHeight();
         WIDTH = pixelArray.getWidth();
-        arrayForHuffman = new double[3 * HEIGHT * WIDTH];
+        arrayForZigZag = new double[3 * HEIGHT * WIDTH];
         double arrayPix[][] = new double[SIZE][SIZE];
 
         int row = 0;
@@ -34,6 +35,7 @@ public class EncoderJPEG {
                 row = i + STEP;
                 col = STEP;
                 for (int j = 0; j < WIDTH; j += STEP) {
+
                     for (int k = i; k < row; k++) {
                         for (int s = j; s < col; s++) {
                             arrayPix[x][y] = yCbCr[k][s][element];
@@ -45,23 +47,19 @@ public class EncoderJPEG {
                     x = 0;
                     y = 0;
                     arrayPix = runWavelet(arrayPix);
-                    //arrayPix = runQuant(arrayPix);
-                    //runHideZigZag();
+                    arrayPix = runQuant(arrayPix);
+                    runHideZigZag(arrayPix);
+
                     for (int k = i; k < row; k++) {
                         for (int s = j; s < col; s++) {
                             yCbCr[k][s][element] = arrayPix[x][y];
-                            //System.out.printf("%4f ", yCbCr[k][s][element]);
                             y++;
                         }
-                        //System.out.println();
                         y = 0;
                         ++x;
                     }
-                    //System.out.println();
                     x = 0;
                     y = 0;
-                    //runQuant(arrayPix);
-                    //runHideZigZag();
                     col += STEP;
                 }
             }
@@ -77,12 +75,11 @@ public class EncoderJPEG {
         return HEIGHT * HEIGHT * 3;
     }
 
-    public double[] getArrayForHuffman() {
-        return arrayForHuffman;
+    public double[] getArrayForZigZag() {
+        return arrayForZigZag;
     }
 
     private double[][] runWavelet(double array[][]) {
-        //return codecDCT.dct(array);
         return codecDCT.directHoaar(array);
     }
 
@@ -91,13 +88,12 @@ public class EncoderJPEG {
         return resultArray;
     }
 
-    private void runHideZigZag() {
-        convolution = zigZag.getHideZigZagArray(resultArray, SIZE);
-        for (int i = 0; i < 64; i++) {
-            arrayForHuffman[position++] = convolution[i];
+    private void runHideZigZag(double array[][]) {
+        convolution = zigZag.getHideZigZagArray(array, SIZE);
+        for (int i = 0; i < STEP * STEP; i++) {
+            arrayForZigZag[position++] = convolution[i];
         }
     }
-
 
     private int position = 0;
     private int HEIGHT;
@@ -107,10 +103,9 @@ public class EncoderJPEG {
     private double yCbCr[][][];
     private double resultArray[][];
     private double convolution[];
-    private double arrayForHuffman[];
+    private double arrayForZigZag[];
     private PixelArray pixelArray;
     private DCT codecDCT;
     private Quant quant;
     private ZigZag zigZag;
-    private Huffman huffman;
 }

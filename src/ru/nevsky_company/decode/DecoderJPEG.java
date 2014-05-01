@@ -2,42 +2,45 @@ package ru.nevsky_company.decode;
 
 import java.io.IOException;
 
+import static java.lang.System.*;
+
 public class DecoderJPEG {
 
     public DecoderJPEG(double arrayForHuffman[], int size) {
-        System.out.println("\tSTART INITIALIZATION DECODER'S OBJECT:");
+        out.println("DECODE JPEG:");
         this.arrayForHuffman = arrayForHuffman;
         SIZE_INPUT_ARRAY = size;
         SIZE_COLOR_BLOCK = SIZE_INPUT_ARRAY / 3;
         arrayAfterZigZag = new double[SIZE_BLOCK][SIZE_BLOCK];
         HEIGHT = (int)Math.sqrt(SIZE_COLOR_BLOCK);
-        WIDTH = HEIGHT;
-        deIDCT = new DeIDCT();
         deZigZag = new DeZigZag();
         deQuant = new DeQuant();
-        System.out.println("\tEND INITIALIZATION DECODER'S OBJECT");
+        deIDCT = new DeIDCT();
     }
 
-    public DecoderJPEG(double[][][] yCbCr, int length) {
+    public DecoderJPEG(double[][][] yCbCr, int size) {
+        out.println("DECODE JPEG:");
         this.yCbCr = yCbCr;
-        SIZE_INPUT_ARRAY = length;
-        SIZE_COLOR_BLOCK = SIZE_INPUT_ARRAY / 3;  // one of layers
-        HEIGHT = (int)Math.sqrt(SIZE_COLOR_BLOCK); // height of image
+        SIZE_INPUT_ARRAY = size;
+        SIZE_COLOR_BLOCK = SIZE_INPUT_ARRAY / 3;
         arrayAfterZigZag = new double[SIZE_BLOCK][SIZE_BLOCK];
-        WIDTH = HEIGHT; // width of image
+        HEIGHT = (int)Math.sqrt(SIZE_COLOR_BLOCK);
         deIDCT = new DeIDCT();
+        deQuant = new DeQuant();
     }
 
     public void runAlgrithm() throws IOException {
-        //fillYCbCr();
-        int row = 0;
-        int col = 0;
+        fillYCbCr();
+
+        int row;
+        int col;
         int x = 0;
         int y = 0;
         final int COUNT_LAYER = 3;
         double arrayPix[][] = new double[SIZE_BLOCK][SIZE_BLOCK];
+
         for (int element = 0; element < COUNT_LAYER; element++) {
-            System.out.println("\n\nPRINT VALUES OF YCbCr FOR CHANNEL " + element + "\n\n");
+            out.println("\n\nPRINT VALUES OF YCbCr FOR CHANNEL " + element + "\n\n");
             for (int i = 0; i < HEIGHT; i += STEP) {
                 row = i + STEP;
                 col = 0;
@@ -57,14 +60,11 @@ public class DecoderJPEG {
                     for (int k = i; k < row; k++) {
                         for (int s = j; s < col; s++) {
                             yCbCr[k][s][element] = arrayPix[x][y];
-                            //System.out.printf("%3f ", yCbCr[k][s][element]);
                             y++;
                         }
-                        //System.out.println();
                         y = 0;
                         ++x;
                     }
-                    //System.out.println();
                     x = 0;
                     y = 0;
                 }
@@ -79,32 +79,29 @@ public class DecoderJPEG {
     }
 
     private void fillYCbCr() throws IOException {
-        System.out.println("\tSTART ALGORITHM:");
+        yCbCr = new double[HEIGHT][HEIGHT][3];
+        out.println("START ALGORITHM:");
         int positionY = 0;
         int positionCb = SIZE_COLOR_BLOCK;
         int positionCr = 2 * positionCb;
-        yCbCr = new double[SIZE_COLOR_BLOCK][SIZE_COLOR_BLOCK][3];
 
-        double block[] = new double[BLOCK];
-
-        System.out.println("\t\tRUN CONVERSION");
-        doConversion(positionY, positionCb, block, 0);
-        doConversion(positionCb, positionCr, block, 1);
-        doConversion(positionCr, SIZE_INPUT_ARRAY, block, 2);
+        out.println("\t\tRUN CONVERSION");
+        doConversion(positionY, 0);
+        doConversion(positionCb, 1);
+        doConversion(positionCr, 2);
     }
 
-    private void doConversion(int startPosition, int endPosition,
-                              double block[], int stepAlgorithm) {
-        System.out.println("\t\tStep conversion = " + stepAlgorithm);
+    private void doConversion(int startPosition, int stepAlgorithm) {
+        out.println("\t\tStep conversion = " + stepAlgorithm);
+        double block[] = new double[BLOCK];
         int col = 0;
-        int row = 0;
+        int row;
         int x = 0;
         int y = 0;
         int position = startPosition;
-        for (int i = 0; i < HEIGHT; i += STEP) {
+        for (int i = 0; i < HEIGHT; i += SIZE_BLOCK) {
             row = i + STEP;
-            col = 0;
-            for (int j = 0; j < HEIGHT; j += STEP) {
+            for (int j = 0; j < HEIGHT; j += SIZE_BLOCK) {
                 col += STEP;
 
                 int index = 0;
@@ -112,8 +109,8 @@ public class DecoderJPEG {
                     block[index++] = arrayForHuffman[k];
                 }
                 position += BLOCK;
-                //arrayAfterZigZag = deZigZag.getArray(block);
-                //arrayAfterQuant = deQuant.quant(arrayAfterZigZag);
+                arrayAfterZigZag = deZigZag.getArray(block);
+                arrayAfterQuant = runQuant(arrayAfterZigZag);
 
                 for (int k = i; k < row; k++) {
                     for (int s = j; s < col; s++) {
@@ -126,12 +123,17 @@ public class DecoderJPEG {
                 x = 0;
                 y = 0;
             }
+            col = 0;
         }
+        out.println("END FILL LAYOUT " + STEP);
     }
 
     private double[][] runWavelet(double F[][]) {
-        //return deIDCT.idct(F);
         return deIDCT.directHoaar(F);
+    }
+
+    private double[][] runQuant(double[][] arrayAfterWavelet) {
+        return deQuant.quant(arrayAfterWavelet);
     }
 
 
@@ -139,7 +141,6 @@ public class DecoderJPEG {
     private double arrayForHuffman[];
     private final int SIZE_INPUT_ARRAY;
     private int SIZE_COLOR_BLOCK;
-    private int WIDTH;
     private int HEIGHT;
     private final int STEP = 8;
     private final int SIZE_BLOCK = 8;
