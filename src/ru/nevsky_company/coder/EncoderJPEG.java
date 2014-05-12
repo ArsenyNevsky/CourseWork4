@@ -2,31 +2,85 @@ package ru.nevsky_company.coder;
 
 import java.io.IOException;
 
+
 public class EncoderJPEG {
 
     public EncoderJPEG(String nameImage) throws IOException {
-        System.out.println("ENCODE JPEG");
+        System.out.println("\tENCODER JPEG");
         pixelArray = new PixelArray(nameImage);
-        codecDCT = new DCT();
+        enWavelet = new EnWavelet();
         quant = new Quant();
         zigZag = new ZigZag();
+        convolution = new int[SIZE * SIZE];
     }
 
-    /**
-     * Проходим трижды по матрице YCbCr. Сначала всю работу от начала до конца проводим
-     * с компонентой Y. Затем проводим аналогичную работу с компонентой Cb, а после с Cr.
-     * В результате записываем все получившиеся данные в один массив
-     */
-    public void runAlgorithm() {
-        System.out.println("RUN CODE JPEG:");
+    public void run() {
         yCbCr = pixelArray.getyCbCrArray();
         HEIGHT = pixelArray.getHeight();
         WIDTH = pixelArray.getWidth();
-        arrayForZigZag = new double[3 * HEIGHT * WIDTH];
-        double arrayPix[][] = new double[SIZE][SIZE];
 
-        int row = 0;
-        int col = 0;
+        double hideLay1[] = hideLay(getLay(0)); // свернули слои
+        double hideLay2[] = hideLay(getLay(1));
+        double hideLay3[] = hideLay(getLay(2));
+
+        hideLay1 = runWavelet(hideLay1); // к каждому слою применили вейвлеты
+        hideLay2 = runWavelet(hideLay2);
+        hideLay3 = runWavelet(hideLay3);
+
+        expand(hideLay1, 0);
+        expand(hideLay2, 1);
+        expand(hideLay3, 2);
+
+        QUANT();
+        System.out.println("\tEND ENCODER");
+    }
+
+    public int getSizePicture() {
+        return HEIGHT * HEIGHT * 3;
+    }
+
+    public int[] getArrayForZigZag() {
+        return arrayForZigZag;
+    }
+
+    private double[][] getLay(int numberLay) {
+        double lay[][] = new double[HEIGHT][HEIGHT];
+        for (int i = 0; i < HEIGHT; i++) {
+            for (int j = 0; j < HEIGHT; j++) {
+                lay[i][j] = yCbCr[i][j][numberLay];
+            }
+        }
+        return lay;
+    }
+
+    private double[] hideLay(double[][] lay) {
+        double hiddenLay[] = new double[HEIGHT * HEIGHT];
+        int k = 0;
+        for (int i = 0; i < HEIGHT; i++) {
+            for (int j = 0; j < HEIGHT; j++) {
+                hiddenLay[k++] = lay[i][j];
+            }
+        }
+        return hiddenLay;
+    }
+
+    private void expand(double[] array, int lay) {
+        int k = 0;
+        for (int i = 0; i < HEIGHT; i++) {
+            for (int j = 0; j < HEIGHT; j++) {
+                yCbCr[i][j][lay] = array[k++];
+            }
+        }
+    }
+
+    private void QUANT() {
+        position = 0;
+        double arrayPix[][] = new double[SIZE][SIZE];
+        arrayForZigZag = new int[3 * HEIGHT * WIDTH];
+        int quant[][];
+
+        int row;
+        int col;
         int x = 0;
         int y = 0;
         final int COUNT_LAYER = 3;
@@ -35,7 +89,6 @@ public class EncoderJPEG {
                 row = i + STEP;
                 col = STEP;
                 for (int j = 0; j < WIDTH; j += STEP) {
-
                     for (int k = i; k < row; k++) {
                         for (int s = j; s < col; s++) {
                             arrayPix[x][y] = yCbCr[k][s][element];
@@ -46,49 +99,25 @@ public class EncoderJPEG {
                     }
                     x = 0;
                     y = 0;
-                    arrayPix = runWavelet(arrayPix);
-                    arrayPix = runQuant(arrayPix);
-                    runHideZigZag(arrayPix);
-
-                    for (int k = i; k < row; k++) {
-                        for (int s = j; s < col; s++) {
-                            yCbCr[k][s][element] = arrayPix[x][y];
-                            y++;
-                        }
-                        y = 0;
-                        ++x;
-                    }
-                    x = 0;
-                    y = 0;
+                    quant = runQuant(arrayPix);
+                    runHideZigZag(quant);
                     col += STEP;
                 }
             }
         }
-        System.out.println("END CODE JPEG:\n");
+        System.out.println("END QUANT JPEG:\n");
     }
 
-    public double[][][] getYCbCr() {
-        return yCbCr;
+    private double[] runWavelet(double array[]) {
+        return enWavelet.directHoaar(array, HEIGHT);
     }
 
-    public int getSizePicture() {
-        return HEIGHT * HEIGHT * 3;
-    }
-
-    public double[] getArrayForZigZag() {
-        return arrayForZigZag;
-    }
-
-    private double[][] runWavelet(double array[][]) {
-        return codecDCT.directHoaar(array);
-    }
-
-    private double[][] runQuant(double f[][]) {
+    private int[][] runQuant(double f[][]) {
         resultArray = quant.quant(f);
         return resultArray;
     }
 
-    private void runHideZigZag(double array[][]) {
+    private void runHideZigZag(int array[][]) {
         convolution = zigZag.getHideZigZagArray(array, SIZE);
         for (int i = 0; i < STEP * STEP; i++) {
             arrayForZigZag[position++] = convolution[i];
@@ -101,11 +130,11 @@ public class EncoderJPEG {
     private final int SIZE = 8;
     private final int STEP = 8;
     private double yCbCr[][][];
-    private double resultArray[][];
-    private double convolution[];
-    private double arrayForZigZag[];
+    private int resultArray[][];
+    private int convolution[];
+    private int arrayForZigZag[];
     private PixelArray pixelArray;
-    private DCT codecDCT;
+    private EnWavelet enWavelet;
     private Quant quant;
     private ZigZag zigZag;
 }

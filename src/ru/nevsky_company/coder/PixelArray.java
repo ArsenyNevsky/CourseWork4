@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-class PixelArray {
+public class PixelArray {
 
     public PixelArray(String nameImage) throws IOException {
         loadImage(nameImage);
@@ -45,7 +45,7 @@ class PixelArray {
     private void convertPixelToRGB() {
         System.out.println();
         rgbArray = new int[height][width][3];
-        int rgb = 0;
+        int rgb;
         for (int row = 0; row < height; row++) {
             for (int col = 0; col < width; col++) {
                 rgb = img.getRGB(col, row);
@@ -61,9 +61,9 @@ class PixelArray {
      * The method convert RGB values to YCbCr values
      */
     private void convertRGBtoYCbCr() {
-        int R = 0;
-        int G = 0;
-        int B = 0;
+        int R;
+        int G;
+        int B;
         yCbCrArray = new double[height][width][3];
         for (int row = 0; row < height; row++) {
             for (int col = 0; col < width; col++) {

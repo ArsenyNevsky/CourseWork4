@@ -5,9 +5,9 @@ import java.awt.image.BufferedImage;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-class DePixelArray {
+public class DePixelArray {
 
-    public DePixelArray(double yCbCrArray[][][], int height) {
+    public DePixelArray(int yCbCrArray[][][], int height) {
         this.yCbCrArray = yCbCrArray;
         this.height = height;
         width = height;
@@ -17,8 +17,6 @@ class DePixelArray {
     public void runConversion() throws IOException {
         System.out.println();
         System.out.println("RUN CONVERSION");
-        System.out.println();
-        System.out.println();
         for (int row = 0; row < width; row++) {
             for (int col = 0; col < height; col++) {
                 convertYCBCRtoRGB(yCbCrArray[row][col][0],
@@ -35,14 +33,19 @@ class DePixelArray {
     }
 
     private void convertYCBCRtoRGB(double Y, double Cb, double Cr) {
-        R = (int)(Y + (Cr - 128) * 1.402);
-        G = (int)(Y - (Cb - 128) * 0.34414 - (Cr - 128) * 0.71414);
-        B = (int)(Y + 1.772 * (Cb - 128));
+        R = round(Y + (Cr - 128) * 1.402);
+        G = round(Y - (Cb - 128) * 0.34414 - (Cr - 128) * 0.71414);
+        B = round(Y + 1.772 * (Cb - 128));
+        R = R > 255 ? 255 : (R < 0 ? 0 : R);
+        G = G > 255 ? 255 : (G < 0 ? 0 : G);
+        B = B > 255 ? 255 : (B < 0 ? 0 : B);
+    }
+
+    private int round(double value) {
+        return (int)(value);
     }
 
     private void writeImage() throws IOException {
-        System.out.println();
-        System.out.println();
         System.out.println("PRINT OUT ARRAY:");
         int pImage[] = new int[height * height];
         for (int row = 0, count = 0; row < height; row++) {
@@ -60,7 +63,6 @@ class DePixelArray {
 
     private int getPixelValue(int r, int g, int b) {
         int argb = 0;
-        //argb += -16777216; // alpha channel
         argb += (b & 0xff); // blue channel
         argb += ((g & 0xff) << 8); // green channel
         argb += ((r & 0xff) << 16); // red channel
@@ -69,7 +71,7 @@ class DePixelArray {
 
     private BufferedImage img;
     private int rgbArray[][];
-    private double yCbCrArray[][][];
+    private int yCbCrArray[][][];
     private int height;
     private int width;
     private int R;

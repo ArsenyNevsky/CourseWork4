@@ -2,13 +2,13 @@ package ru.nevsky_company.coder;
 
 import ru.nevsky_company.decode.DeZigZag;
 
-class DCT {
+class EnWavelet {
 
-    public DCT(int f[][], int N) {
+    public EnWavelet(int f[][], int N) {
         this.N = N;
     }
 
-    public DCT() {
+    public EnWavelet() {
         N = 8;
         zigZag = new ZigZag();
         deZigZag = new DeZigZag();
@@ -18,11 +18,20 @@ class DCT {
         double c[] = zigZag.getHideZigZagArray(f, N);
         double result[] = new double[N * N];
         for (int i = 0; i < N * N / 2; i++) {
-            result[2 * i] = (c[2 * i] + c[2 * i + 1]) / 2;
-            result[2 * i + 1] = (c[2 * i] - c[2 * i + 1]) / 2;
+            result[2 * i] = ((c[2 * i] + c[2 * i + 1]) / 2.0);
+            result[2 * i + 1] = ((c[2 * i] - c[2 * i + 1]) / 2.0);
         }
-        double array[][] = deZigZag.getArray(result);
+        double array[][] = deZigZag.getDoubleArray(result);
         return array;
+    }
+
+    public double[] directHoaar(double c[], int h) {
+        double result[] = new double[h * h];
+        for (int i = 0; i < (h * h) / 2; i++) {
+            result[2 * i] = ((c[2 * i] + c[2 * i + 1]) / 2.0);
+            result[2 * i + 1] = ((c[2 * i] - c[2 * i + 1]) / 2.0);
+        }
+        return result;
     }
 
     public int[][] dct(int f[][]) {
@@ -76,6 +85,7 @@ class DCT {
     private double sqrt(double x) {
         return Math.sqrt(x);
     }
+
 
     private final int N;
     private final double PI = Math.PI;

@@ -2,29 +2,38 @@ package ru.nevsky_company.decode;
 
 import ru.nevsky_company.coder.ZigZag;
 
-class DeIDCT {
+class DeWavelet {
 
-    public DeIDCT(int F[][], final int N) {
+    public DeWavelet(int F[][], final int N) {
         this.N = N;
         zigZag = new ZigZag();
         zigZag1 = new DeZigZag();
     }
 
-    public DeIDCT() {
+    public DeWavelet() {
         N = 8;
         zigZag = new ZigZag();
         zigZag1 = new DeZigZag();
     }
 
-    public double[][] directHoaar(double f[][]) {
-        double c[] = zigZag.getHideZigZagArray(f, N);
-        double result[] = new double [N * N];
+    public int[][] directHoaar(int f[][]) {
+        int c[] = zigZag.getHideZigZagArray(f, N);
+        int result[] = new int[N * N];
         for (int i = 0; i < N * N / 2; i++) {
-            result[2 * i] = c[2 * i] + c[2 * i + 1];
-            result[2 * i + 1] = c[2 * i] - c[2 * i + 1];
+            result[2 * i] = ((c[2 * i] + c[2 * i + 1]));
+            result[2 * i + 1] = ((c[2 * i] - c[2 * i + 1]));
         }
-        double array[][] = zigZag1.getArray(result); // there was c
+        int array[][] = zigZag1.getIntegerArray(result); // there was c
         return array;
+    }
+
+    public int[] directWavelet(int c[], int h) {
+        int result[] = new int[h * h];
+        for (int i = 0; i < (h * h) / 2; i++) {
+            result[2 * i] = ((c[2 * i] + c[2 * i + 1]));
+            result[2 * i + 1] = ((c[2 * i] - c[2 * i + 1]));
+        }
+        return result;
     }
 
     public int[][] idct(int F[][]) {

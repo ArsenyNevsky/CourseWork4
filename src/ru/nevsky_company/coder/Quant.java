@@ -2,21 +2,44 @@ package ru.nevsky_company.coder;
 
 class Quant {
 
-    public double[][] quant(double array[][]) {
+    public int[][] quant(double array[][]) {
+        int result[][] = new int[SIZE][SIZE];
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
-                array[i][j] = ceil(array[i][j] / tableQuant[i][j]);
+                result[i][j] = ceil(array[i][j] / tableQuant[i][j]);
             }
         }
-        return array;
+        return result;
     }
 
-    private double ceil(double value) {
-        return value;
+    private int ceil(double value) {
+        return (int)Math.round(value);
     }
 
-    private final int[][] tableQuant = {
-            {16, 11, 10, 16, 24, 40, 51, 61},
+    private final double[][] tableQuant = {
+            {3, 5, 7, 9, 11, 13, 15, 17},
+            {5, 7, 9, 11, 13, 15, 17, 19},
+            {7, 9, 11, 13, 15, 17, 19, 21},
+            {9, 11, 13, 15, 17, 19, 21, 23},
+            {11, 13, 15, 17, 19, 21, 23, 25},
+            {13, 15, 17, 19, 21, 23, 25, 27},
+            {15, 17, 19, 21, 23, 25, 27, 29},
+            {17, 19, 21, 23, 25, 27, 29, 31}
+    };
+
+    /*
+      {3, 5, 7, 9, 11, 13, 15, 17},
+            {5, 7, 9, 11, 13, 15, 17, 19},
+            {7, 9, 11, 13, 15, 17, 19, 21},
+            {9, 11, 13, 15, 17, 19, 21, 23},
+            {11, 13, 15, 17, 19, 21, 23, 25},
+            {13, 15, 17, 19, 21, 23, 25, 27},
+            {15, 17, 19, 21, 23, 25, 27, 29},
+            {17, 19, 21, 23, 25, 27, 29, 31}
+     */
+
+    /*
+    {16, 11, 10, 16, 24, 40, 51, 61},
             {12, 12, 14, 19, 26, 58, 60, 55},
             {14, 13, 16, 24, 40, 57, 69, 56},
             {14, 17, 22, 29, 51, 87, 80, 62},
@@ -24,7 +47,6 @@ class Quant {
             {24, 35, 55, 64, 81, 104, 113, 92},
             {49, 64, 78, 87, 103, 121, 120, 101},
             {72, 92, 95, 98, 112, 100, 103, 99}
-    };
-
+     */
     private final int SIZE = 8;
 }

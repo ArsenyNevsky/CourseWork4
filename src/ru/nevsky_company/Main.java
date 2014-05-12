@@ -4,39 +4,37 @@ import ru.nevsky_company.coder.EncoderJPEG;
 import ru.nevsky_company.decode.DecoderJPEG;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+
 
 public class Main {
 
-    public static long fibb(long n) {
-        long b = 0;
-        long secondValue = 1;
-        long thirdValue;
-        long a = 0;
-        for (int i = 2; i <= n; i++) {
-            a = b;
-            thirdValue = b + secondValue;
-            b = secondValue;
-            secondValue = thirdValue;
+    private static void sort(int[] array) {
+        ArrayList a = new ArrayList();
+        for (int i = 0; i < array.length - 1; i++) {
+            a.add(array[i]);
         }
-        System.out.println("3 last " + a);
-        System.out.println("2 last " + b);
-        return (a + b) % 10;
+        Collections.sort(a);
+        System.out.println("Min = " + a.get(0));
+        System.out.println("Max = " + a.get(a.size() - 1));
     }
+
 
     public static void main(String[] args) throws IOException {
 
         System.out.println("CODE JPEG:");
-        EncoderJPEG encoderJPEG = new EncoderJPEG("cotee.jpg");
-        encoderJPEG.runAlgorithm();
-        double[] array = encoderJPEG.getArrayForZigZag();
-        //double array[][][] = encoderJPEG.getYCbCr();
+
+        EncoderJPEG encoderJPEG = new EncoderJPEG("imageEarth.bmp");
+        encoderJPEG.run();
+        int[] array = encoderJPEG.getArrayForZigZag();
+
         int SIZE = encoderJPEG.getSizePicture();
 
         System.gc();
-        System.out.println();
 
-        //DecoderJPEG decoderJPEG = new DecoderJPEG(array, SIZE);
         DecoderJPEG decoderJPEG = new DecoderJPEG(array, SIZE);
-        decoderJPEG.runAlgrithm();
+        decoderJPEG.run();
+
     }
 }
