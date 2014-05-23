@@ -1,14 +1,15 @@
 package ru.nevsky_company.decode;
 
-import java.io.IOException;
+import ru.nevsky_company.HuffmanZip.Huffman;
 
-import static java.lang.System.*;
+import java.io.IOException;
 
 public class DecoderJPEG {
 
-    public DecoderJPEG(int arrayForHuffman[], int size) {
-        out.println("DECODE JPEG:");
-        this.arrayForHuffman = arrayForHuffman;
+    public DecoderJPEG(int size) {
+        huffman = new Huffman();
+        huffman.decompress();
+        this.arrayForHuffman = getArrayForHuffman();
         SIZE_INPUT_ARRAY = size;
         SIZE_COLOR_BLOCK = SIZE_INPUT_ARRAY / 3;
         arrayAfterZigZag = new int[SIZE_BLOCK][SIZE_BLOCK];
@@ -17,6 +18,7 @@ public class DecoderJPEG {
         deQuant = new DeQuant();
         deWavelet = new DeWavelet();
     }
+
 
     public void run() throws IOException {
         fillYCbCr();
@@ -40,6 +42,12 @@ public class DecoderJPEG {
         }
     }
 
+
+    public int[][][] getYCbCr() {
+        return yCbCr;
+    }
+
+
     private int[][] getLay(int numberLay) {
         int lay[][] = new int[HEIGHT][HEIGHT];
         for (int i = 0; i < HEIGHT; i++) {
@@ -49,6 +57,7 @@ public class DecoderJPEG {
         }
         return lay;
     }
+
 
     private int[] hideLay(int[][] lay) {
         int hiddenLay[] = new int[HEIGHT * HEIGHT];
@@ -61,6 +70,7 @@ public class DecoderJPEG {
         return hiddenLay;
     }
 
+
     private void expand(int[] array, int lay) {
         int k = 0;
         for (int i = 0; i < HEIGHT; i++) {
@@ -70,21 +80,20 @@ public class DecoderJPEG {
         }
     }
 
+
     private void fillYCbCr() throws IOException {
         yCbCr = new int[HEIGHT][HEIGHT][3];
-        out.println("START ALGORITHM:");
         int positionY = 0;
         int positionCb = SIZE_COLOR_BLOCK;
         int positionCr = 2 * positionCb;
 
-        out.println("\t\tRUN CONVERSION");
         doConversion(positionY, 0);
         doConversion(positionCb, 1);
         doConversion(positionCr, 2);
     }
 
+
     private void doConversion(int startPosition, int stepAlgorithm) {
-        out.println("\t\tStep conversion = " + stepAlgorithm);
         int block[] = new int[BLOCK];
         int col = 0;
         int row;
@@ -117,15 +126,30 @@ public class DecoderJPEG {
             }
             col = 0;
         }
-        out.println("END FILL LAYOUT " + STEP);
     }
+
 
     private int[] runWavelet(int F[]) {
         return deWavelet.directWavelet(F, HEIGHT);
     }
 
+
     private int[][] runQuant(int[][] arrayAfterWavelet) {
         return deQuant.quant(arrayAfterWavelet);
+    }
+
+
+    private int[] getArrayForHuffman() {
+        String resultDecompression = huffman.getResultDecompress();
+        char array[] = resultDecompression.toCharArray();
+        arrayForHuffman = new int[array.length];
+        int i = 0;
+        int temp = 0;
+        for (char symbol : array) {
+            temp = (int)symbol - 150;
+            arrayForHuffman[i++] = temp;
+        }
+        return arrayForHuffman;
     }
 
 
@@ -143,4 +167,5 @@ public class DecoderJPEG {
     private DeQuant deQuant;
     private DeWavelet deWavelet;
     private DePixelArray dePixelArray;
+    private Huffman huffman;
 }

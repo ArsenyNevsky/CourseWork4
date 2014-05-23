@@ -15,8 +15,6 @@ public class DePixelArray {
     }
 
     public void runConversion() throws IOException {
-        System.out.println();
-        System.out.println("RUN CONVERSION");
         for (int row = 0; row < width; row++) {
             for (int col = 0; col < height; col++) {
                 convertYCBCRtoRGB(yCbCrArray[row][col][0],
@@ -30,6 +28,10 @@ public class DePixelArray {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    protected int[][] getRgbArray() {
+        return rgbArray;
     }
 
     private void convertYCBCRtoRGB(double Y, double Cb, double Cr) {
@@ -46,7 +48,6 @@ public class DePixelArray {
     }
 
     private void writeImage() throws IOException {
-        System.out.println("PRINT OUT ARRAY:");
         int pImage[] = new int[height * height];
         for (int row = 0, count = 0; row < height; row++) {
             for (int col = 0; col < width; col++) {
@@ -56,8 +57,6 @@ public class DePixelArray {
         }
         img = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         img.setRGB(0, 0, width, height, pImage, 0, width);
-        System.out.println("\nSAVE IMAGE");
-        System.out.println("END ALGORITHM");
         ImageIO.write(img, "bmp", new FileOutputStream("RESULT.bmp"));  // save image
     }
 

@@ -2,55 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc36abda-822b-4534-bc62-66ddba01a194" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/coteRESULT.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cotee.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/earth.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/earthRESULT.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/forest.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/forestRESULT.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/cote.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mountain.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mountainRESULT.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/coder/Huffman.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/decode/DeHuffman.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vesna.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vesnaRESULT.jpg" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/coder/DCT.java" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/coder/EnWavelet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/decode/DeIDCT.java" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/decode/DeWavelet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/HuffmanZip/Huffman.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/HuffmanZip/data.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/HuffmanZip/data_Comparator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/HuffmanZip/myDataList.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/coder/imageEarth.bmp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/decode/DePixelArray.java" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/decode/DePixelArray.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/decode/DeQuant.java" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/decode/DeQuant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/decode/DeZigZag.java" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/decode/DeZigZag.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/decode/DecoderJPEG.java" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/decode/DecoderJPEG.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/coder/EncoderJPEG.java" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/coder/EncoderJPEG.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/Main.java" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/coder/PixelArray.java" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/coder/PixelArray.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/coder/Quant.java" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/coder/Quant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/nevsky_company/coder/ZigZag.java" afterPath="$PROJECT_DIR$/src/ru/nevsky_company/coder/ZigZag.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CourseWork4.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Main.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399923076739" ignored="false" />
+    <file path="/Main.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1400860175429" ignored="false" />
     <file path="/DecodeJPEG.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1396799891514" ignored="false" />
     <file path="/DCT.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399821802324" ignored="false" />
-    <file path="/PixelArray.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399799014775" ignored="false" />
+    <file path="/PixelArray.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1400188664461" ignored="false" />
     <file path="/Quant.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399814345197" ignored="false" />
     <file path="/CodeJPEG.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1396780163155" ignored="false" />
     <file path="/ZigZag.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399799377170" ignored="false" />
     <file path="/IDCT.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1396629720366" ignored="false" />
     <file path="/DeZigZag.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399797774996" ignored="false" />
     <file path="/DeIDCT.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399839969012" ignored="false" />
-    <file path="/DePixelArray.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399811287272" ignored="false" />
-    <file path="/EncoderJPEG.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399879726757" ignored="false" />
+    <file path="/DePixelArray.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1400188604788" ignored="false" />
+    <file path="/EncoderJPEG.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1400276332928" ignored="false" />
     <file path="/DeQuant.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399804545473" ignored="false" />
-    <file path="/DecoderJPEG.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399879531449" ignored="false" />
-    <file path="/Dummy.txt" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399878292219" ignored="false" />
-    <file path="/Huffman.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399890674929" ignored="false" />
+    <file path="/DecoderJPEG.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1400252148973" ignored="false" />
+    <file path="/Dummy.txt" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1400857846131" ignored="false" />
+    <file path="/Huffman.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1400860117788" ignored="false" />
     <file path="/HuffmanTree.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399883337655" ignored="false" />
     <file path="/HuffmanLeaf.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399883342031" ignored="false" />
     <file path="/HuffmanCode.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399883390512" ignored="false" />
     <file path="/BinaryStdIn.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399888801342" ignored="false" />
     <file path="/BinaryDump.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1399922516000" ignored="false" />
+    <file path="$PROJECT_DIR$/../CSC/src/ru/yandex/Main.java" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1400184524562" ignored="false" />
+    <file path="$PROJECT_DIR$/../CSC/comp.txt" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1400100191977" ignored="false" />
+    <file path="$PROJECT_DIR$/../CSC/decompress.txt" changelist="dc36abda-822b-4534-bc62-66ddba01a194" time="1400154090628" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,13 +110,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/Main.java">
+      <file leaf-file-name="Huffman.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/HuffmanZip/Huffman.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="38" selection-start="225" selection-end="225" vertical-scroll-proportion="0.31982943">
+            <state line="33" column="45" selection-start="1162" selection-end="1162" vertical-scroll-proportion="1.0234542">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#sort#0;class#Main#0" expanded="false" />
+                <element signature="method#getResultDecompress#0;class#Huffman#0" expanded="false" />
+                <element signature="method#getBits#0;class#Huffman#0" expanded="false" />
+                <element signature="method#add_to_list#0;class#Huffman#0" expanded="false" />
+                <element signature="method#sort_my_data#0;class#Huffman#0" expanded="false" />
+                <element signature="method#evaluate_code#0;class#Huffman#0" expanded="false" />
+                <element signature="method#doCoding_to_tree#0;class#Huffman#0" expanded="false" />
+                <element signature="method#setToflagOthers#0;class#Huffman#0" expanded="false" />
+                <element signature="method#get_Where_the_true_code#0;class#Huffman#0" expanded="false" />
+                <element signature="method#copmare_and_code#0;class#Huffman#0" expanded="false" />
+                <element signature="method#write_To_file#0;class#Huffman#0" expanded="false" />
+                <element signature="method#code_data_content#0;class#Huffman#0" expanded="false" />
+                <element signature="method#getChar_code#0;class#Huffman#0" expanded="false" />
+                <element signature="method#isEqualSomething#0;class#Huffman#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DecoderJPEG.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/decode/DecoderJPEG.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="0" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#run#0;class#DecoderJPEG#0" expanded="false" />
+                <element signature="method#getYCbCr#0;class#DecoderJPEG#0" expanded="false" />
+                <element signature="method#getLay#0;class#DecoderJPEG#0" expanded="false" />
+                <element signature="method#hideLay#0;class#DecoderJPEG#0" expanded="false" />
+                <element signature="method#expand#0;class#DecoderJPEG#0" expanded="false" />
+                <element signature="method#runWavelet#0;class#DecoderJPEG#0" expanded="false" />
+                <element signature="method#runQuant#0;class#DecoderJPEG#0" expanded="false" />
+                <element signature="method#getArrayForHuffman#0;class#DecoderJPEG#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DePixelArray.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/decode/DePixelArray.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="49" selection-start="1475" selection-end="1475" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#runConversion#0;class#DePixelArray#0" expanded="false" />
+                <element signature="method#convertYCBCRtoRGB#0;class#DePixelArray#0" expanded="false" />
+                <element signature="method#round#0;class#DePixelArray#0" expanded="false" />
+                <element signature="method#getPixelValue#0;class#DePixelArray#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EncoderJPEG.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/coder/EncoderJPEG.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="16" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="method#getSizePicture#0;class#EncoderJPEG#0" expanded="false" />
+                <element signature="method#getyCbCr#0;class#EncoderJPEG#0" expanded="false" />
+                <element signature="method#getArrayForZigZag#0;class#EncoderJPEG#0" expanded="false" />
+                <element signature="method#getLay#0;class#EncoderJPEG#0" expanded="false" />
+                <element signature="method#hideLay#0;class#EncoderJPEG#0" expanded="false" />
+                <element signature="method#expand#0;class#EncoderJPEG#0" expanded="false" />
+                <element signature="method#runWavelet#0;class#EncoderJPEG#0" expanded="false" />
+                <element signature="method#runQuant#0;class#EncoderJPEG#0" expanded="false" />
+                <element signature="method#runHideZigZag#0;class#EncoderJPEG#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -151,22 +202,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/ru/nevsky_company/decode/DeIDCT.java" />
-        <option value="$PROJECT_DIR$/src/ru/nevsky_company/decode/DecoderJPEG.java" />
-        <option value="$PROJECT_DIR$/src/ru/nevsky_company/coder/EncoderJPEG.java" />
-        <option value="$PROJECT_DIR$/src/ru/nevsky_company/coder/Huffman.java" />
-        <option value="$PROJECT_DIR$/src/ru/nevsky_company/Huffman/HuffmanTree.java" />
-        <option value="$PROJECT_DIR$/src/ru/nevsky_company/Huffman/HuffmanLeaf.java" />
-        <option value="$PROJECT_DIR$/src/ru/nevsky_company/Huffman/HuffmanCode.java" />
-        <option value="$PROJECT_DIR$/src/ru/nevsky_company/Huffman/HuffmanNode.java" />
-        <option value="$PROJECT_DIR$/src/ru/nevsky_company/image/BinaryStdIn.java" />
-        <option value="$PROJECT_DIR$/src/ru/nevsky_company/BinaryStdOut.java" />
         <option value="$PROJECT_DIR$/src/ru/nevsky_company/BinaryStdIn.java" />
         <option value="$PROJECT_DIR$/src/ru/nevsky_company/Huffman/MinPQ.java" />
         <option value="$PROJECT_DIR$/src/ru/nevsky_company/Huffman/Huffman.java" />
         <option value="$PROJECT_DIR$/src/ru/nevsky_company/BinaryDump.java" />
         <option value="$PROJECT_DIR$/src/ru/nevsky_company/Huffman.java" />
+        <option value="$PROJECT_DIR$/src/ru/nevsky_company/HuffmanZip/myDataList.java" />
+        <option value="$PROJECT_DIR$/src/ru/nevsky_company/HuffmanZip/data.java" />
+        <option value="$PROJECT_DIR$/src/ru/nevsky_company/HuffmanZip/data_Comparator.java" />
+        <option value="$PROJECT_DIR$/src/ru/nevsky_company/coder/Quant.java" />
+        <option value="$PROJECT_DIR$/src/ru/nevsky_company/decode/DeQuant.java" />
+        <option value="$PROJECT_DIR$/src/ru/nevsky_company/decode/DePixelArray.java" />
+        <option value="$PROJECT_DIR$/src/ru/nevsky_company/coder/PixelArray.java" />
+        <option value="$PROJECT_DIR$/src/ru/nevsky_company/decode/DecoderJPEG.java" />
+        <option value="$PROJECT_DIR$/src/ru/nevsky_company/coder/EncoderJPEG.java" />
         <option value="$PROJECT_DIR$/src/ru/nevsky_company/Main.java" />
+        <option value="$PROJECT_DIR$/src/ru/nevsky_company/HuffmanZip/Huffman.java" />
       </list>
     </option>
   </component>
@@ -207,8 +258,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -245,8 +294,76 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CourseWork4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CourseWork4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nevsky_company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HuffmanZip" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CourseWork4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CourseWork4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nevsky_company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="decode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CourseWork4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CourseWork4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nevsky_company" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coder" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,7 +472,11 @@
       <created>1398954023841</created>
       <updated>1398954023841</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="I've done 90% of work">
+      <created>1399926045795</created>
+      <updated>1399926045795</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -384,7 +505,6 @@
     <layout>
       <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32837838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496361" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -393,15 +513,16 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32702702" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969433" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2496361" sideWeight="0.6716216" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2860262" sideWeight="0.6716216" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42972973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -448,7 +569,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="I've done 80% of work" />
+    <option name="LAST_COMMIT_MESSAGE" value="I've done 90% of work" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -464,6 +585,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="This course work doesn't work" />
     <MESSAGE value="I've done 80% of work" />
+    <MESSAGE value="I've done 90% of work" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -473,92 +595,101 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/decode/DeZigZag.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/decode/DeQuant.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="31" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0">
+        <state line="25" column="44" selection-start="767" selection-end="767" vertical-scroll-proportion="0.8756345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comp.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/coder/Quant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="44" selection-start="832" selection-end="832" vertical-scroll-proportion="0.3258427">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/coder/PixelArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="4" selection-start="353" selection-end="353" vertical-scroll-proportion="0.23174158">
+          <folding>
+            <element signature="method#PixelArray#0;class#PixelArray#0" expanded="false" />
+            <element signature="method#getyCbCrArray#0;class#PixelArray#0" expanded="false" />
+            <element signature="method#getHeight#0;class#PixelArray#0" expanded="false" />
+            <element signature="method#getWidth#0;class#PixelArray#0" expanded="false" />
+            <element signature="docComment;method#loadImage#0;class#PixelArray#0" expanded="false" />
+            <element signature="method#loadImage#0;class#PixelArray#0" expanded="false" />
+            <element signature="method#convertPixelToRGB#0;class#PixelArray#0" expanded="false" />
+            <element signature="docComment;method#convertRGBtoYCbCr#0;class#PixelArray#0" expanded="false" />
+            <element signature="method#convertRGBtoYCbCr#0;class#PixelArray#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/src.zip!/java/util/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="336" column="0" selection-start="9252" selection-end="9252" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/HuffmanZip/myDataList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="69" selection-end="69" vertical-scroll-proportion="0.14423077">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/decode/DePixelArray.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="626" selection-end="626" vertical-scroll-proportion="0.6852792">
+        <state line="49" column="49" selection-start="1475" selection-end="1475" vertical-scroll-proportion="0.0">
           <folding>
+            <element signature="method#runConversion#0;class#DePixelArray#0" expanded="false" />
             <element signature="method#convertYCBCRtoRGB#0;class#DePixelArray#0" expanded="false" />
+            <element signature="method#round#0;class#DePixelArray#0" expanded="false" />
+            <element signature="method#getPixelValue#0;class#DePixelArray#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/coder/EnWavelet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="736" selection-end="736" vertical-scroll-proportion="0.33173078">
-          <folding>
-            <element signature="method#dct#0;class#EnWavelet#0" expanded="false" />
-            <element signature="method#dct_direct#0;class#EnWavelet#0" expanded="false" />
-            <element signature="method#cos#0;class#EnWavelet#0" expanded="false" />
-            <element signature="method#sqrt#0;class#EnWavelet#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/coder/PixelArray.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="13" selection-start="1714" selection-end="1714" vertical-scroll-proportion="0.4522472">
-          <folding>
-            <element signature="docComment;method#convertRGBtoYCbCr#0;class#PixelArray#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/coder/ZigZag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="method#fillArray#0;class#ZigZag#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/decode/DeQuant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="44" selection-start="767" selection-end="767" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/coder/Quant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="44" selection-start="832" selection-end="832" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/decode/DecoderJPEG.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="5" selection-start="2003" selection-end="2003" vertical-scroll-proportion="0.0">
+        <state line="11" column="0" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="method#run#0;class#DecoderJPEG#0" expanded="false" />
+            <element signature="method#getYCbCr#0;class#DecoderJPEG#0" expanded="false" />
             <element signature="method#getLay#0;class#DecoderJPEG#0" expanded="false" />
             <element signature="method#hideLay#0;class#DecoderJPEG#0" expanded="false" />
             <element signature="method#expand#0;class#DecoderJPEG#0" expanded="false" />
-            <element signature="method#fillYCbCr#0;class#DecoderJPEG#0" expanded="false" />
-            <element signature="method#doConversion#0;class#DecoderJPEG#0" expanded="false" />
             <element signature="method#runWavelet#0;class#DecoderJPEG#0" expanded="false" />
             <element signature="method#runQuant#0;class#DecoderJPEG#0" expanded="false" />
+            <element signature="method#getArrayForHuffman#0;class#DecoderJPEG#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/coder/EncoderJPEG.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="30" selection-start="815" selection-end="815" vertical-scroll-proportion="0.5477528">
+        <state line="34" column="16" selection-start="995" selection-end="995" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="method#getSizePicture#0;class#EncoderJPEG#0" expanded="false" />
+            <element signature="method#getyCbCr#0;class#EncoderJPEG#0" expanded="false" />
             <element signature="method#getArrayForZigZag#0;class#EncoderJPEG#0" expanded="false" />
             <element signature="method#getLay#0;class#EncoderJPEG#0" expanded="false" />
             <element signature="method#hideLay#0;class#EncoderJPEG#0" expanded="false" />
             <element signature="method#expand#0;class#EncoderJPEG#0" expanded="false" />
-            <element signature="method#QUANT#0;class#EncoderJPEG#0" expanded="false" />
             <element signature="method#runWavelet#0;class#EncoderJPEG#0" expanded="false" />
             <element signature="method#runQuant#0;class#EncoderJPEG#0" expanded="false" />
             <element signature="method#runHideZigZag#0;class#EncoderJPEG#0" expanded="false" />
@@ -566,27 +697,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/decode/DeWavelet.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="233" selection-end="233" vertical-scroll-proportion="0.252809">
-          <folding>
-            <element signature="method#DeWavelet#1;class#DeWavelet#0" expanded="false" />
-            <element signature="method#directHoaar#0;class#DeWavelet#0" expanded="false" />
-            <element signature="method#directWavelet#0;class#DeWavelet#0" expanded="false" />
-            <element signature="method#idct#0;class#DeWavelet#0" expanded="false" />
-            <element signature="method#idct_direct#0;class#DeWavelet#0" expanded="false" />
-            <element signature="method#cos#0;class#DeWavelet#0" expanded="false" />
-            <element signature="method#sqrt#0;class#DeWavelet#0" expanded="false" />
-          </folding>
+        <state line="29" column="36" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/Main.java">
+    <entry file="file://$PROJECT_DIR$/decompress.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="38" selection-start="225" selection-end="225" vertical-scroll-proportion="0.31982943">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cote.BMP">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/HuffmanZip/data_Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="200" selection-end="200" vertical-scroll-proportion="0.30456853">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/HuffmanZip/data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="288" selection-end="288" vertical-scroll-proportion="-0.21065989">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/nevsky_company/HuffmanZip/Huffman.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="45" selection-start="1162" selection-end="1162" vertical-scroll-proportion="1.0234542">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#sort#0;class#Main#0" expanded="false" />
+            <element signature="method#getResultDecompress#0;class#Huffman#0" expanded="false" />
+            <element signature="method#getBits#0;class#Huffman#0" expanded="false" />
+            <element signature="method#add_to_list#0;class#Huffman#0" expanded="false" />
+            <element signature="method#sort_my_data#0;class#Huffman#0" expanded="false" />
+            <element signature="method#evaluate_code#0;class#Huffman#0" expanded="false" />
+            <element signature="method#doCoding_to_tree#0;class#Huffman#0" expanded="false" />
+            <element signature="method#setToflagOthers#0;class#Huffman#0" expanded="false" />
+            <element signature="method#get_Where_the_true_code#0;class#Huffman#0" expanded="false" />
+            <element signature="method#copmare_and_code#0;class#Huffman#0" expanded="false" />
+            <element signature="method#write_To_file#0;class#Huffman#0" expanded="false" />
+            <element signature="method#code_data_content#0;class#Huffman#0" expanded="false" />
+            <element signature="method#getChar_code#0;class#Huffman#0" expanded="false" />
+            <element signature="method#isEqualSomething#0;class#Huffman#0" expanded="false" />
           </folding>
         </state>
       </provider>

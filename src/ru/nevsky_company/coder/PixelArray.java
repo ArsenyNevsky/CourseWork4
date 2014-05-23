@@ -11,17 +11,21 @@ public class PixelArray {
         loadImage(nameImage);
     }
 
+
     public double[][][] getyCbCrArray() {
         return yCbCrArray;
     }
+
 
     public int getHeight() {
         return height;
     }
 
+
     public int getWidth() {
         return width;
     }
+
 
     /**
      *
@@ -33,9 +37,6 @@ public class PixelArray {
         img = ImageIO.read(new File(nameImage));
         width = img.getWidth();
         height = img.getHeight();
-
-        System.out.println("Height:\t" + height);
-        System.out.println("Width :\t" + width + "\n");
         convertPixelToRGB();
     }
 
@@ -43,7 +44,6 @@ public class PixelArray {
      * In this method we convert each pixel value to RGB
      */
     private void convertPixelToRGB() {
-        System.out.println();
         rgbArray = new int[height][width][3];
         int rgb;
         for (int row = 0; row < height; row++) {
